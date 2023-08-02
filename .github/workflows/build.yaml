@@ -121,7 +121,7 @@ jobs:
           run: |
             make go-download
             make show-info
-            make stacker-dynamic VERSION_FULL=${{ matrix.build-id }}
+            make stacker-dynamic VERSION_FULL=v1.0.0-rc4-11-gb895c90-dirty
             make stacker VERSION_FULL=v1.0.0-rc4-11-gb895c90-dirty STACKER_BUILD_BASE_IMAGE=docker://arm64v8/alpine:edge
       - name: release
         uses: softprops/action-gh-release@v1
