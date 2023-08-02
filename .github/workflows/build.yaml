@@ -103,6 +103,7 @@ jobs:
           githubToken: ${{ github.token }}
 
           install: |
+            apt-get install add-apt-repository
             add-apt-repository -y ppa:project-machine/squashfuse
             apt-get update
             apt-get install golang
