@@ -36,6 +36,12 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go-version }}
+      - name: Set up Git
+        run: |
+          git config --global http.https://github.com.proxy http://proxy.esl.cisco.com:8080
+          git config --global https.https://github.com.proxy http://proxy.esl.cisco.com:8080
+          git config --global user.email "agopalan@berkeley.edu"
+          git config --global user.name "Ashwin Gopalan"
       - name: Setup Environment
         run: |
           gopath=$PWD/.build/gopath
